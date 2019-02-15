@@ -2,39 +2,30 @@
 	<head>
 		<body> 
 			<?php
-				$input = 'doctor' ;
-				$massiv1 = array( 22, 'Islom',  'dasturchi' , true );
+				$input = 'injiner' ;
+				$massiv1 = array( 23, 'Islom',  'dasturchi' , true );
 				$massiv2 = array( 25, 'Sarvar',  'injiner' , true );
-				$massiv3 = array( 22, 'Shohrux',  'doctor' , true );
-				$bool=false;
-				if($input == $massiv1[2] && $massiv1[0] <= 40 && $massiv1[3]===true){
-					$bool=true;
-					if($bool==true){
-						echo  $massiv1[1] . ' Yaroqli';
-					}
-					else {
-						echo $massiv1[1] . ' Yaroqsiz!';
-					}
+				$massiv3 = array( 40, 'Shohrux',  'doctor' , true );
+				
+				if($input == $massiv1[2] && $massiv1[0] <= 40 && $massiv1[3]===true){					
+					echo  $massiv1[1] . ' Yaroqli';
 				}
-			
-				if($input == $massiv2[2] && $massiv2[0] <= 40 && $massiv2[3]===true){
-					$bool=true;
-					if($bool){
-						echo  $massiv2[1] . ' Yaroqli';
-					}
-					else {
-						echo $massiv2[1] . ' Yaroqsiz!';
-					}
+				else if($input==$massiv1[2]){
+					echo $massiv1[1] . ' Yaroqsiz!';
 				}
 				
-				if($input == $massiv3[2] && $massiv3[0] <= 40 && $massiv3[3]===true){
-					$bool=true;
-					if($bool){
-						echo  $massiv3[1] . ' Yaroqli';
-					}
-					else {
-						echo $massiv3[1] . ' Yaroqsiz!';
-					}
+				if($input == $massiv2[2] && $massiv2[0] <= 40 && $massiv2[3]===true ){					
+					echo  $massiv2[1] . ' Yaroqli';
+				}
+				else if($input==$massiv2[2]){
+					echo $massiv2[1] . ' Yaroqsiz!';
+				}
+					
+				if($input == $massiv3[2] && $massiv3[0] <= 40 && $massiv3[3]===true){					
+					echo  $massiv3[1] . ' Yaroqli';
+				}
+				else if($input==$massiv3[2]){
+					echo $massiv3[1] . ' Yaroqsiz!';
 				}
 			?>
 		</body>
