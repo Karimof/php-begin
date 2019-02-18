@@ -4,8 +4,8 @@
 			<?php
 				$input = 'injiner' ;
 				$massiv1 = array( 23, 'Islom',  'dasturchi' , true );
-				$massiv2 = array( 25, 'Sarvar',  'injiner' , true );
-				$massiv3 = array( 40, 'Shohrux',  'doctor' , true );
+				$massiv2 = array( 41, 'Sarvar',  'injiner' , true );
+				$massiv3 = array( 30, 'Shohrux',  'doctor' , true );
 				
 				if($input == $massiv1[2] && $massiv1[0] <= 40 && $massiv1[3]===true){					
 					echo  $massiv1[1] . ' Yaroqli';
