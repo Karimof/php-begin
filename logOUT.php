@@ -10,8 +10,10 @@
 	</head>
 		<body>
 			<?php
-				if (isset($_SESSION['user'])){
-		echo'<div style="padding:20px; font-family: calibri" class="input-group container">
+			unset($_SESSION['user']);
+			if (isset($_SESSION['user'])) {		
+			echo '
+			<div style="padding:20px; font-family: calibri" class="input-group container">
 				<form action="" method="GET">
 					<p style="text-align: center">Teacher: <span class="glyphicon glyphicon-user" style="font-size: 20px"></span></p>
 					<div class="row" style="text-align: center">
@@ -28,7 +30,6 @@
     					</div>
     				</div>
 				</form>
-
 				<form action="upload_uqituvchi.php" method="POST" enctype="multipart/form-data">';
     				$cnt = $_GET['cnt'];
     				if($cnt){
@@ -56,8 +57,8 @@
 					}
 				}
 				else {
-				echo' <div class="container" style="width:30%">
-					<div class="alert alert-warning">
+					echo' <div class="container" style="width:30%">
+				<div class="alert alert-warning">
   						<strong>Warning!</strong> Dasturda ishlash uchun ro\'yhatdan o\'ting
 					</div>
 				</div>';

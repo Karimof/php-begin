@@ -1,3 +1,6 @@
+<?php
+	include 'header.php';
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -28,7 +31,7 @@
 							$bool = true;
 						}
 					}
-					if($bool ==true){
+					if($bool == true){
 						echo '<div class="container">
 							<div class="alert alert-success" style="text-align: center; width:30%;">
     							<strong>Yuklash bajarildi!</strong> <a href="#" class="alert-link"></a>.

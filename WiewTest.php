@@ -1,15 +1,17 @@
+<?php
+	include 'header.php';
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-	    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
-	    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 	</head>
 		<body>
-			<form action="upload_uquvchi.php" method="POST" enctype="multipart/form-data">
+			<form action="get_uquvchi.php" method="POST" enctype="multipart/form-data">
 				<?php
+				if (isset($_SESSION['user'])){
     				$file = 'Baza.txt';
 					$uqilganFayl = file_get_contents($file);
 					$ajralganSatr = explode(PHP_EOL, $uqilganFayl);
@@ -94,6 +96,14 @@
     					<br><button style="text-align: right" type="submit" class="btn btn-success btn-sm">Tekshirish</button><br>
     				</div>
     			</div>';
+    			}
+    			else {
+    				echo' <div class="container" style="width:30%">
+				<div class="alert alert-warning">
+  						<strong>Warning!</strong> Dasturda ishlash uchun ro\'yhatdan o\'ting
+					</div>
+				</div>';
+    			}
 				?>
 			</form>
 		</body>

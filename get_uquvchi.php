@@ -1,3 +1,6 @@
+<?php
+	include 'header.php';
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -39,11 +42,11 @@
 					 	$togrijavoblarSoni++;
 					} 
 				}
-				echo'<div class="container">
-					<div class="alert alert-success" style="text-align: center; width:30%;">
-    					<strong>Siz ' . $barchaJavoblarSoni . ' ta savoldan ' . $togrijavoblarSoni . ' tasiga to\'g\'ri javob berdingiz!</strong> <a href="#" class="alert-link"></a>
-  					</div>
-  				</div>'; 
+				echo' <div class="container" style="width:30%">
+				<div class="alert alert-info">
+  						<strong>Siz ' . $barchaJavoblarSoni . ' ta savoldan ' . $togrijavoblarSoni . ' tasiga to\'g\'ri javob berdingiz!
+					</div>
+				</div>';
 			?>
 		</body>
 </hmtl>
