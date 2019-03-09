@@ -1,20 +1,20 @@
 <?php
 	include 'header.php';
-	$login = $_POST['login'];
-	$parol = $_POST['parol'];
+	$query = $connection->query('SELECT * FROM users ORDER BY id DESC');
+	$list = $query->fetchAll();
+
+	$loginText = $_POST['login'];
+	$passwordText = $_POST['password'];
 	$bool = false;
-	$file = 'users.txt';
-	$uqilganFayl = file_get_contents($file);
-	$ajralganSatr = explode(PHP_EOL, $uqilganFayl);
-	foreach ($ajralganSatr as $key => $value) {
-		$qatorElementlari = explode(';', $ajralganSatr[$key]);
-		if ($qatorElementlari[1] == $login && $qatorElementlari[2] == $parol) {
-			$bool = true;
-			$_SESSION['user'] = [
-    		'login' => $qatorElementlari[1],
+	foreach ($list  as $user) {
+		if ( $user['login'] == $loginText && $user['password'] == $passwordText ){
+			$_SESSION['user_session'] = [
+   				'login_session' => $user['login']
 			];
+			$bool = true;
 		}
 	}
+		
 	if ($bool == true ) {
 		echo'<div class="container" style="width:30%">
 			<div class="alert alert-success">
@@ -29,4 +29,5 @@
 			</div>
 		</div>';
 	}
+	// var_dump($_SESSION['login']);
 ?>

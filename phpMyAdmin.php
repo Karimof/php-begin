@@ -13,7 +13,7 @@ create table `questions` (
     `variant_a` varchar(128) not null,
     `variant_b` varchar(128) not null,
     `variant_c` varchar (128) not null,
-    `javob` varchar(128) not null,
+    `javob` varchar(1) not null,
     `vaqt_va_sana` datetime
 )
 

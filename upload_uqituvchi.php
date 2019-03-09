@@ -18,16 +18,11 @@
 				$variantsC = $_POST['variantsC'];
 				$javoblar = $_POST['javoblar'];
 				if($savolNames  && $variantsA && $variantsB && $variantsC) {
-					$fileName = 'Baza.txt';
-					$file = fopen($fileName, "w");
-					$bool = false;
 					foreach ($savolNames as $key => $value) {
 						if($savolNames[$key]  && $variantsA[$key] && $variantsB[$key] && $variantsC[$key]){
-							fwrite($file, $savolNames[$key] . ';');
-							fwrite($file, $variantsA[$key] . ';');
-							fwrite($file, $variantsB[$key] . ';');
-							fwrite($file, $variantsC[$key] . ';');
-							fwrite($file, $javoblar[$key] . PHP_EOL);
+							$query = $connection->query(
+								'INSERT INTO questions(id, savol, variant_a, variant_b, variant_c, javob)  VALUES ("' . $savolNames[$key] . '", "' . $variantsA[$key] . '","' . $variantsB[$key] . '", "' . $variantsC[$key] . '", "' . $variantsA[$key] . '", "' . $javoblar[$key] . '")'
+							);
 							$bool = true;
 						}
 					}
@@ -38,7 +33,6 @@
   							</div>
   						</div>';
 					}
-					fclose($file);
 				}	
 				else {
 					echo 'Ma\'lumotlarni to\'liq kiriting!';
